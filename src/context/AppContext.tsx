@@ -4,7 +4,6 @@ import {
   createContext,
   useReducer,
   useRef,
-  useState,
 } from "react";
 import { AppReducer } from "../reducers/AppReducer";
 import { InitialState } from "../reducers/InitialState";
@@ -19,8 +18,6 @@ export function AppProvider({
   children: ReactElement | undefined;
 }): React.JSX.Element {
   const [state, dispatch] = useReducer(AppReducer, InitialState);
-
-  const [showSuccess, setShowSuccess] = useState(false);
 
   const formRef = useRef(null);
 

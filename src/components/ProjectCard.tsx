@@ -1,5 +1,3 @@
-import { projects } from "../assets/projectsData";
-import img from "../assets/img/e-commerce.png";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { ProjectTypes } from "../types/InitialStateTypes";
 
