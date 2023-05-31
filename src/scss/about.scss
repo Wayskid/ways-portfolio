@@ -1,0 +1,180 @@
+@import "./variables";
+
+#about {
+  display: grid;
+  color: $clr-primary-800;
+  padding-top: 3rem;
+  gap: 6rem;
+  width: min(80rem, 95%);
+  justify-self: center;
+
+  .aboutMe {
+    display: grid;
+    gap: 3rem;
+
+    .aboutMeHeader {
+      @include sectionHeader;
+    }
+
+    .aboutFlex {
+      display: grid;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      
+      @include desktop {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      
+      .imageDiv {
+        padding-block: 3rem;
+        display: grid;
+        justify-content: center;
+        grid-template-areas: "stack";
+        z-index: 4;
+
+        & > * {
+          grid-area: stack;
+        }
+
+        .imageBack {
+          background-color: $clr-primary-600;
+          border-radius: 10%;
+          box-shadow: 0 10px 0 -5px $clr-primary-200,
+            0 20px 0 -10px $clr-primary-800;
+        }
+
+        .myImg {
+          border-radius: 10%;
+          height: 17rem;
+          width: 18rem;
+          background-color: $clr-primary-400;
+          padding: 1rem 3rem 0 3rem;
+          z-index: 4;
+          rotate: 8deg;
+          transition: rotate 0.3s ease;
+
+          &:hover {
+            rotate: 0deg;
+            transition: rotate 0.3s ease;
+            transition-delay: 0.2s;
+          }
+        }
+
+        .myImgAnimation {
+          animation: adjust 1.5s;
+        }
+
+        @keyframes adjust {
+          from {
+            rotate: 8deg;
+          }
+          50% {
+            rotate: -8deg;
+          }
+          to {
+            rotate: 8deg;
+          }
+        }
+      }
+
+      .aboutDetails {
+        display: grid;
+        gap: 1rem;
+        text-align: center;
+
+        .aboutWriteUps {
+          display: grid;
+          gap: 1.5rem;
+
+          & > *:first-child {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 35px;
+            font-weight: 600;
+          }
+
+          & > *:nth-child(2) {
+            width: 60%;
+            justify-self: center;
+            font-size: 14px;
+          }
+
+          & > *:last-child {
+            font-family: "Raleway", sans-serif;
+            font-size: 20px;
+          }
+        }
+
+        .aboutBtn {
+          @include backgroundBtn;
+          padding: 0.5rem 2rem;
+          justify-self: center;
+        }
+      }
+    }
+  }
+
+  .skills {
+    display: grid;
+    text-align: center;
+    position: relative;
+    padding-inline: 2rem;
+    opacity: 1;
+    background-color: white;
+    gap: 1rem;
+    align-items: start;
+
+    @include desktop {
+      display: flex;
+    }
+
+    .skill {
+      display: grid;
+      padding-block: 4rem;
+      gap: 1.5rem;
+      border-top: 2px solid $clr-primary-500;
+
+      @include desktop {
+        border: none;
+      }
+
+      .iconDiv {
+        width: 70px;
+        height: 70px;
+        background-color: $clr-primary-500;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        border-radius: 50%;
+        font-size: 37px;
+        justify-self: center;
+      }
+
+      &Title {
+        font-size: 23px;
+        font-weight: 500;
+      }
+
+      &Grid {
+        font-size: 20px;
+        display: grid;
+        gap: 1rem;
+      }
+    }
+
+    .noBorder {
+      border: none;
+    }
+
+    .manyMore {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      translate: -50% 0;
+      font-size: 14px;
+      font-style: italic;
+      color: $clr-primary-500;
+    }
+  }
+}

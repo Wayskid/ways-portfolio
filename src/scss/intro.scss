@@ -1,0 +1,63 @@
+@import "./variables";
+
+#intro {
+  display: grid;
+  grid-template-areas: "stack";
+
+  & > * {
+    grid-area: stack;
+  }
+  
+  .introBody {
+    height: 100vh;
+    display: grid;
+    background-color: $clr-primary-800;
+    align-content: center;
+    text-align: center;
+    gap: 0.7rem;
+    justify-content: center;
+    font-size: larger;
+  }
+
+  .jobTitle {
+    font-size: 17px;
+    color: rgb(179, 179, 179);
+  }
+
+  .introBtns {
+    z-index: 4;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+
+    .homeDownloadBtn {
+      @include noBackgroundBtn;
+      font-size: 14px;
+      padding: 0.7rem 1.8rem;
+    }
+
+    .viewWorkBtn {
+      @include backgroundBtn;
+      padding: 0.7rem 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 14px;
+
+      &:hover .arrowRight {
+        rotate: 90deg;
+      }
+
+      .arrowRight {
+        transition: rotate 0.4s ease;
+      }
+    }
+  }
+}
+
+.scroll {
+  rotate: 90deg;
+  width: fit-content;
+  translate: 0 -2.1rem;
+  font-size: 15px;
+}

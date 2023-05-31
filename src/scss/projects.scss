@@ -1,0 +1,141 @@
+@import "./variables";
+
+#projects {
+  display: grid;
+  color: $clr-primary-800;
+  padding-block: 3rem;
+  gap: 4rem;
+
+  .projectsHeader {
+    @include sectionHeader;
+  }
+
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    border-radius: 20px;
+    width: min(80rem, 95%);
+    justify-self: center;
+  }
+
+  .projectCard {
+    display: grid;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+
+    &:hover .projectCardSeeMore {
+      grid-template-rows: 1fr;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &Bottom {
+      bottom: 100%;
+      width: 100%;
+      display: grid;
+      padding: 0.5rem;
+
+      .projectCardText {
+        display: grid;
+        gap: 0.5rem;
+
+        .projectTitle {
+          font-size: 18px;
+          font-weight: 500;
+          color: $clr-primary-400;
+        }
+
+        .projectName {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+
+      .projectCardSeeMore {
+        display: grid;
+        background-color: white;
+
+        @include desktop {
+          position: absolute;
+          top: 100%;
+          width: 100%;
+          z-index: 4;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 1s ease;
+        }
+
+        .seeMoreWrap {
+          display: grid;
+          gap: 0.5rem;
+          overflow: hidden;
+
+          @include desktop {
+            padding-inline: 0.5rem;
+          }
+        }
+
+        .projectDes {
+          font-size: 15px;
+        }
+        
+        .builtWith {
+          font-weight: 500;
+          font-size: 17px;
+        }
+
+        .projectBtns {
+          padding-bottom: 0.5rem;
+          display: flex;
+          gap: 2rem;
+
+          & > * {
+            border: none;
+            background: none;
+          }
+
+          .projectSiteBtn {
+            border: none;
+            background: none;
+            font-size: 15px;
+            display: flex;
+            gap: 0.3rem;
+            align-items: center;
+            justify-content: left;
+            color: $clr-primary-400;
+            cursor: pointer;
+
+            &:hover {
+              color: $clr-primary-500;
+            }
+
+            &:hover > :last-child {
+              translate: 5px 0;
+              transition: 0.5s ease;
+            }
+          }
+
+          .projectGithubBtn {
+            @extend .projectSiteBtn;
+            color: $clr-primary-600;
+          }
+        }
+
+        // .projectGithubBtn {
+        //   @extend .projectSiteBtn;
+        //   color: $clr-primary-400;
+        // }
+      }
+    }
+
+    &:hover .projectCardBtns {
+      translate: 0;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "./variables";
+
+.nav {
+  position: fixed;
+  background-color: $clr-primary-800;
+  top: 0;
+  width: 100%;
+  display: grid;
+  z-index: 5;
+
+  &Wrap {
+    display: flex;
+    justify-content: space-between;
+    width: min(30rem, 90%);
+    justify-self: center;
+    a {
+      color: $clr-primary-200;
+      display: grid;
+      justify-items: center;
+      text-align: center;
+      font-size: 17px;
+      padding-inline: 1rem;
+
+      &:hover {
+        color: $clr-primary-500;
+      }
+
+      p {
+        padding-block: 0.4rem;
+      }
+    }
+  }
+}
+
+.activeNav {
+}
+
+.navBorder {
+  display: grid;
+  height: 4px;
+  width: 120%;
+  background-color: $clr-primary-500;
+  transition: 1s ease;
+}

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,400;1,500&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@import "./variables";
+
+*{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+   font-family: inherit;
+}
+
+*,*::before,*::after{
+   box-sizing: border-box;
+}
+
+html{
+   scroll-behavior: smooth;
+}
+
+:focus::placeholder{
+   color: transparent;
+}
+
+::-webkit-scrollbar{
+   width: 0.3em;
+}
+
+::-webkit-scrollbar-track{
+   background-color: $clr-primary-800;
+}
+
+::-webkit-scrollbar-thumb{
+   background-color: $clr-primary-200;
+}
+
+@supports (scrollbar-color: red blue){
+   *{
+      scrollbar-color: $clr-primary-200 $clr-primary-800;
+      scrollbar-width: auto;
+   }
+}
+
+body{
+   font-family: 'Saira', sans-serif;
+   color: $clr-primary-200;
+   background-color: $clr-primary-200;
+}
+
+.App{
+   display: grid;
+}

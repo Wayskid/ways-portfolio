@@ -1,0 +1,61 @@
+@import "./variables";
+
+footer{
+  background-color: $clr-primary-800;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  padding-block: 2.5rem;
+  font-size: 20px;
+}
+
+footer img{
+   height: 6rem;
+}
+
+.socials{
+  display: flex;
+  gap: 4rem;
+}
+
+.footerIconWrapper{
+  padding: 0.6rem 0.7rem;
+  background-color: $clr-primary-400;
+  color: $clr-primary-200;
+  display: grid;
+  align-items: center;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.footerIconWrapper:hover{
+   background-color: $clr-primary-500;
+   scale: 1.15;
+   transition: 0.5s ease;
+}
+
+.footerIconWrapper:hover.footerIconWrapper>*{
+   animation: turn 0.5s;
+}
+
+@keyframes turn{
+   from{
+      translate: 0rem 0rem;
+   }
+   44%{
+   }
+   50%{
+      translate: 0rem 2rem;
+   }
+   60%{
+      translate: 0rem -2rem;
+      opacity: 0;
+   }
+   to{
+      translate: 0rem 0rem;
+   }
+}
+
+footer span{
+   color: $clr-primary-500;
+}
