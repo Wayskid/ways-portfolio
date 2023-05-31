@@ -5,6 +5,7 @@ export interface InitialStateTypes {
     email: string;
     message: string;
   };
+  emailSent: boolean;
 }
 
 export interface ProjectTypes {

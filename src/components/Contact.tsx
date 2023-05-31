@@ -64,9 +64,11 @@ export default function Contact() {
             }
           />
           <button className="contactBtn">SEND</button>
-          <p className="emailSent">
-            <AiFillCheckCircle /> Sent Successfully
-          </p>
+          {state.emailSent && (
+            <p className="emailSent">
+              <AiFillCheckCircle /> Sent Successfully
+            </p>
+          )}
         </form>
       </Reveal>
     </div>

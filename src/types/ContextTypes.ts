@@ -5,6 +5,6 @@ import { ActionTypes } from "./ReducerActionTypes";
 export type ContextTypes = {
   state: InitialStateTypes;
   dispatch: React.Dispatch<ActionTypes>;
-  sendEmail: (e: FormEvent) => void;
+  sendEmail: (e: FormEvent<HTMLFormElement>) => void;
   formRef: React.MutableRefObject<null>;
 };

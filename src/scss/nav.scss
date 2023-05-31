@@ -11,14 +11,14 @@
   &Wrap {
     display: flex;
     justify-content: space-between;
-    width: min(30rem, 90%);
+    width: min(25rem, 80%);
     justify-self: center;
     a {
       color: $clr-primary-200;
       display: grid;
       justify-items: center;
       text-align: center;
-      font-size: 17px;
+      font-size: 18px;
       padding-inline: 1rem;
 
       &:hover {

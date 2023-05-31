@@ -11,10 +11,24 @@ export function AppReducer(state: InitialStateTypes, action: ActionTypes) {
           [action.field]: action.payload,
         },
       };
+    case ReducerActionTypes.CLEAR_CONTACT_FORM:
+      return {
+        ...state,
+        contactForm: {
+          name: "",
+          email: "",
+          message: "",
+        },
+      };
     case ReducerActionTypes.ACTIVE_NAV:
       return {
         ...state,
         activeNav: action.payload,
+      };
+    case ReducerActionTypes.EMAIL_SENT:
+      return {
+        ...state,
+        emailSent: !state.emailSent,
       };
     default:
       return state;

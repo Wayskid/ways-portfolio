@@ -21,12 +21,12 @@
       align-items: center;
       gap: 2rem;
       position: relative;
-      
+
       @include desktop {
         grid-template-columns: 1fr 1fr;
         gap: 0;
       }
-      
+
       .imageDiv {
         padding-block: 3rem;
         display: grid;
@@ -124,9 +124,9 @@
     background-color: white;
     gap: 1rem;
     align-items: start;
-
+    
     @include desktop {
-      display: flex;
+      grid-template-columns: repeat(3, 1fr);
     }
 
     .skill {

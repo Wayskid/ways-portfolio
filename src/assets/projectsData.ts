@@ -16,11 +16,11 @@ export const projects = [
     title: "Messenger App",
     name: "WaysChat",
     appImg:
-      "https://res.cloudinary.com/diiohnshc/image/upload/v1685507902/Ways%20Portfolio/Screenshot_47_lsx5zv.png",
+      "https://res.cloudinary.com/diiohnshc/image/upload/v1685553744/Ways%20Portfolio/Screenshot_55_wwki9h.png",
     description:
       "Messenger App that allows you to chat with friends and family anywhere, with just your email.",
     viewCode: "https://github.com/Wayskid/ways-chat-app",
-    visitApp: "https://ways-chat-app.netlify.app/",
+    visitApp: "https://ways-chatapp.netlify.app/",
     builtWith: "React, useReducer, TailWind CSS, DaisyUI Firebase",
   },
   {
@@ -39,7 +39,7 @@ export const projects = [
     title: "CRUD App",
     name: "Todo App",
     appImg:
-      "https://res.cloudinary.com/diiohnshc/image/upload/v1685507902/Ways%20Portfolio/Screenshot_41_vt9gis.png",
+      "https://res.cloudinary.com/diiohnshc/image/upload/v1685553104/Ways%20Portfolio/Screenshot_52_udatkz.png",
     description:
       "Todo app where you can add, edit and delete tasks. Also mark and filter tasks as complete and incomplete",
     viewCode: "https://github.com/Wayskid/ways-advanced-todolist",
@@ -51,7 +51,7 @@ export const projects = [
     title: "RESTful API",
     name: "Meme Generator",
     appImg:
-      "https://res.cloudinary.com/diiohnshc/image/upload/v1685507902/Ways%20Portfolio/Screenshot_43_nme7to.png",
+      "https://res.cloudinary.com/diiohnshc/image/upload/v1685553105/Ways%20Portfolio/Screenshot_53_xz897k.png",
     description:
       "Use Meme Generator app to generate, edit and download your favorite memes",
     viewCode: "https://github.com/Wayskid/ways-react-meme-generator",
@@ -63,10 +63,10 @@ export const projects = [
     title: "CRUD App",
     name: "Feedback App",
     appImg:
-      "https://res.cloudinary.com/diiohnshc/image/upload/v1685507902/Ways%20Portfolio/Screenshot_44_gk0jen.png",
+      "https://res.cloudinary.com/diiohnshc/image/upload/v1685553104/Ways%20Portfolio/Screenshot_54_phlg7r.png",
     description: "App for giving product feedbacks and ratings.",
-    viewCode: "https://github.com/Wayskid/ways-advanced-todolist",
-    visitApp: "https://ways-todo-app.netlify.app/",
-    builtWith: "React, useReducer, TailWind CSS, DaisyUI",
+    viewCode: "https://github.com/Wayskid/ways-feedback-app",
+    visitApp: "https://ways-feedback-app.netlify.app/",
+    builtWith: "React",
   },
 ];

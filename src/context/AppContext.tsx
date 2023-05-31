@@ -8,7 +8,8 @@ import {
 import { AppReducer } from "../reducers/AppReducer";
 import { InitialState } from "../reducers/InitialState";
 import { ContextTypes } from "../types/ContextTypes";
-// import emailJs from "emailjs";
+import emailjs from "@emailjs/browser";
+import { ReducerActionTypes } from "../types/ReducerActionTypes";
 
 const AppContext = createContext<ContextTypes>({} as ContextTypes);
 
@@ -21,30 +22,32 @@ export function AppProvider({
 
   const formRef = useRef(null);
 
-  function sendEmail(e: FormEvent) {
+  function sendEmail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    // emailJs
-    //   .sendForm(
-    //     "service_xntj62j",
-    //     "template_idj0jxb",
-    //     formRef.current,
-    //     "zTkg27Ahp4AaPiT1q"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //       setShowSuccess(true);
-    //       setTimeout(() => {
-    //         setShowSuccess(false);
-    //       }, 1000);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
-
-    // e.target.reset();
+    emailjs
+      .send(
+        "service_0ho156e",
+        "template_idj0jxb",
+        {
+          name: state.contactForm.name,
+          email: state.contactForm.email,
+          message: state.contactForm.message,
+        },
+        "zTkg27Ahp4AaPiT1q"
+      )
+      .then(
+        () => {
+          dispatch({ type: ReducerActionTypes.EMAIL_SENT });
+          setTimeout(() => {
+            dispatch({ type: ReducerActionTypes.EMAIL_SENT });
+          }, 1000);
+          dispatch({ type: ReducerActionTypes.CLEAR_CONTACT_FORM });
+        },
+        (error: any) => {
+          console.log(error.message);
+        }
+      );
   }
 
   return (

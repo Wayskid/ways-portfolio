@@ -2,6 +2,7 @@ import "../scss/about.scss";
 import MyImage from "../assets/img/myImg.png";
 import { RiTerminalBoxLine } from "react-icons/ri";
 import { BiLayerPlus } from "react-icons/bi";
+import { CgWebsite } from "react-icons/cg";
 import Reveal from "./Reveal";
 
 export default function About() {
@@ -37,9 +38,8 @@ export default function About() {
               </Reveal>
               <Reveal divId="About">
                 <p>
-                  My mission is focused on crafting artistic, eye-catching and
-                  scalable frontend products while writing clean codes, mostly
-                  because I enjoy it!
+                  A loyal, problem solving employee with high attention to details, whose mission is focused on crafting artistic, eye-catching and
+                  scalable frontend products, while writing clean codes.
                 </p>
               </Reveal>
             </div>
@@ -55,19 +55,19 @@ export default function About() {
         <Reveal divId="About">
           <div className="skill noBorder">
             <div className="iconDiv">
-              <RiTerminalBoxLine className="skillIcon" />
+              <CgWebsite className="skillIcon" />
             </div>
             <p className="skillTitle">Frontend</p>
             <p className="skillIntro">
-              I love writing clean and maintainable codes from scratch, and
-              enjoy bringing beautiful, artistic ideas to life in the browser
+              I love enjoy bringing beautiful, artistic ideas to life in the
+              browser by writing clean and maintainable codes
             </p>
             <ul className="skillGrid">
               <li>
-                <p>React</p>
+                <p>HTML</p>
               </li>
               <li>
-                <p>HTML</p>
+                <p>React</p>
               </li>
               <li>
                 <p>CSS</p>
@@ -97,8 +97,7 @@ export default function About() {
             </div>
             <p className="skillTitle">Backend</p>
             <p className="skillIntro">
-              I love writing clean codes from scratch, and enjoy bringing
-              beautiful, artistic ideas to life in the browser
+              Interested in the entire web development spectrum and working on ambitious projects with a team.
             </p>
             <ul className="skillGrid">
               <li>
@@ -129,8 +128,8 @@ export default function About() {
             </div>
             <p className="skillTitle">Design</p>
             <p className="skillIntro">
-              I love writing clean codes from scratch, and enjoy bringing
-              beautiful, artistic ideas to life in the browser
+              I pay attention to little design details resulting in a yearning desire to paint clean fresh designs on
+              the web.
             </p>
             <ul className="skillGrid">
               <li>
