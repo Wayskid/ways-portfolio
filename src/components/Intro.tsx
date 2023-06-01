@@ -1,5 +1,5 @@
 import "../scss/intro.scss";
-// import CV from "../../assets/RICHARD-resume.pdf"
+import CV from "../../assets/resume.pdf"
 import IconBackground from "./iconBackground/IconBackground";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Reveal from "./Reveal";
@@ -12,7 +12,7 @@ export default function Intro() {
           <h1 className="name">Irinyemi Richard</h1>
           <p className="jobTitle">Front-End Developer</p>
           <div className="introBtns">
-            <a href="#" className="homeDownloadBtn">
+            <a href={CV} download className="homeDownloadBtn">
               Download CV
             </a>
             <a href="#about" className="viewWorkBtn">
