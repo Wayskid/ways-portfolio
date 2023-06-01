@@ -87,6 +87,9 @@ export default function About() {
               <li>
                 <p>TypeScript</p>
               </li>
+              <li>
+                <p>Git</p>
+              </li>
             </ul>
           </div>
         </Reveal>
