@@ -1,5 +1,5 @@
 import "../scss/intro.scss";
-import CV from "../../assets/resume.pdf"
+import CV from "../assets/resume.pdf";
 import IconBackground from "./iconBackground/IconBackground";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Reveal from "./Reveal";
