@@ -85,6 +85,9 @@ export default function About() {
                 <p>JavaScript</p>
               </li>
               <li>
+                <p>Redux Toolkit</p>
+              </li>
+              <li>
                 <p>TypeScript</p>
               </li>
               <li>
@@ -116,7 +119,7 @@ export default function About() {
                 <p>RESTful API</p>
               </li>
               <li>
-                <p>Mongoose</p>
+                <p>MongoDB</p>
               </li>
               <li>
                 <p>SQL</p>

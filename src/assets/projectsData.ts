@@ -1,6 +1,19 @@
 export const projects = [
   {
     id: 1,
+    title: "Social media",
+    name: "SocioView",
+    appImg:
+      "https://res.cloudinary.com/diiohnshc/image/upload/v1689228104/Ways%20Portfolio/Screenshot_77_bqcfqh.png",
+    description:
+      "Social media app where you can post your views and like views of people you follow.",
+    viewCode: "https://github.com/Wayskid/socioView",
+    visitApp: "https://socioview.netlify.app/",
+    builtWith:
+      "TypeScript, ReactJS, Redux toolkit, Redux Query, SASS, NodeJS, Express, MongoDB, Express",
+  },
+  {
+    id: 2,
     title: "E-commerce",
     name: "ThriftStarng",
     appImg:
@@ -9,10 +22,10 @@ export const projects = [
     viewCode: "https://github.com/Wayskid/ThriftStarng",
     visitApp: "https://thriftStarng.netlify.app/",
     builtWith:
-      "TypeScript, React, useReducer, SASS, Node, Mongoose, Express, Axios",
+      "TypeScript, ReactJS, useReducer, SASS, NodeJS, MongoDB, Express, Axios",
   },
   {
-    id: 2,
+    id: 3,
     title: "Messenger App",
     name: "WaysChat",
     appImg:
@@ -21,10 +34,10 @@ export const projects = [
       "Messenger App that allows you to chat with friends and family anywhere, with just your email.",
     viewCode: "https://github.com/Wayskid/ways-chat-app",
     visitApp: "https://ways-chatapp.netlify.app/",
-    builtWith: "React, useReducer, TailWind CSS, DaisyUI Firebase",
+    builtWith: "ReactJS, useReducer, TailWind CSS, DaisyUI Firebase",
   },
   {
-    id: 3,
+    id: 4,
     title: "CRUD App",
     name: "WaysNotes App",
     appImg:
@@ -32,10 +45,10 @@ export const projects = [
     description: "Create and quickly jot short or long notes using WaysNotes.",
     viewCode: "https://github.com/Wayskid/ways-notes-app",
     visitApp: "https://ways-notes-app.netlify.app//",
-    builtWith: "React",
+    builtWith: "ReactJS",
   },
   {
-    id: 4,
+    id: 5,
     title: "CRUD App",
     name: "Todo App",
     appImg:
@@ -44,10 +57,10 @@ export const projects = [
       "Todo app where you can add, edit and delete tasks. Also mark and filter tasks as complete and incomplete",
     viewCode: "https://github.com/Wayskid/ways-advanced-todolist",
     visitApp: "https://ways-todo-app.netlify.app/",
-    builtWith: "React, useReducer, TailWind CSS, DaisyUI",
+    builtWith: "ReactJS, useReducer, TailWind CSS, DaisyUI",
   },
   {
-    id: 5,
+    id: 6,
     title: "RESTful API",
     name: "Meme Generator",
     appImg:
@@ -57,16 +70,5 @@ export const projects = [
     viewCode: "https://github.com/Wayskid/ways-react-meme-generator",
     visitApp: "https://ways-meme-generator.netlify.app/",
     builtWith: "React, Axios",
-  },
-  {
-    id: 6,
-    title: "CRUD App",
-    name: "Feedback App",
-    appImg:
-      "https://res.cloudinary.com/diiohnshc/image/upload/v1685553104/Ways%20Portfolio/Screenshot_54_phlg7r.png",
-    description: "App for giving product feedbacks and ratings.",
-    viewCode: "https://github.com/Wayskid/ways-feedback-app",
-    visitApp: "https://ways-feedback-app.netlify.app/",
-    builtWith: "React",
   },
 ];
