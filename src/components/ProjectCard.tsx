@@ -4,7 +4,7 @@ import { ProjectTypes } from "../types/InitialStateTypes";
 export default function ProjectCard({ project }: { project: ProjectTypes }) {
   return (
     <li className="projectCard">
-      <a href="">
+      <a href={project.visitApp}>
         <img src={project.appImg} alt="" />
       </a>
       <div className="projectCardBottom">
