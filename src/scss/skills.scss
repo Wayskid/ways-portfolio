@@ -1,0 +1,89 @@
+@import "./variables";
+
+#skills {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 15% 80%;
+  align-items: start;
+  padding-block: 4rem 1rem;
+  color: black;
+  overflow-x: hidden;
+  scroll-snap-align: center;
+  background-image: url(../assets/img/bkg3.jpg);
+
+  .skillsGrid {
+    display: grid;
+    gap: 2rem;
+    width: min(75rem, 100%);
+    justify-self: center;
+    padding-inline: 1rem;
+
+    @include desktop {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+      align-self: center;
+    }
+
+    .skill {
+      text-align: center;
+      display: grid;
+      justify-items: center;
+      gap: 0.5rem;
+
+      & > :first-child {
+        color: $clr-primary-500;
+        font-size: clamp(30px, 2vw + 10px, 50px);
+      }
+
+      &Title {
+        font-weight: 500;
+        font-size: clamp(18px, 2vw + 2px, 25px);
+        color: rgb(95, 94, 94);
+      }
+
+      &Grid {
+        display: grid;
+        gap: 0.3rem;
+
+        div {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          @include desktop {
+            gap: 2rem;
+          }
+
+          li {
+            font-weight: 500;
+            font-size: clamp(18px, 2vw + 2px, 25px);
+          }
+        }
+      }
+    }
+
+    & > :last-child {
+      grid-column: 1/-1;
+    }
+  }
+
+  .moreToCome {
+    position: absolute;
+    color: $clr-primary-500;
+    animation: bounce 1s infinite;
+    bottom:3rem;
+    justify-self: center;
+
+    @keyframes bounce {
+      from {
+        translate: 0;
+      }
+      60% {
+        translate: 0 10px;
+      }
+      to {
+        translate: 0;
+      }
+    }
+  }
+}

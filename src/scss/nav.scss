@@ -2,8 +2,7 @@
 
 .nav {
   position: fixed;
-  background-color: $clr-primary-800;
-  top: 0;
+  top: 1rem;
   width: 100%;
   display: grid;
   z-index: 5;
@@ -11,23 +10,109 @@
   &Wrap {
     display: flex;
     justify-content: space-between;
-    width: min(25rem, 80%);
     justify-self: center;
-    a {
-      color: $clr-primary-200;
-      display: grid;
-      justify-items: center;
-      text-align: center;
-      font-size: 18px;
-      padding-inline: 1rem;
+    align-items: center;
+    z-index: 5;
+    width: min(75rem, 100%);
 
-      &:hover {
-        color: $clr-primary-500;
+    img {
+      width: 3rem;
+      margin-left: 0.5rem;
+    }
+
+    .navIcons {
+      display: flex;
+      font-size: 20px;
+      gap: 3rem;
+    }
+
+    .burger {
+      display: grid;
+      margin-left: auto;
+
+      .menu {
+        display: grid;
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        place-content: center;
+        border-radius: 50%;
+        font-size: 32px;
+        color: white;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.199);
+          transition: background-color 0.5s ease;
+        }
+      }
+
+      .closeMenu {
+        display: grid;
+        cursor: pointer;
+        place-content: center;
+        border-radius: 50%;
+        font-size: 30px;
+        color: $clr-primary-800;
+        height: 50px;
+        width: 50px;
+        border: 3px solid $clr-primary-800;
+
+        &:hover {
+          background-color: $clr-primary-500;
+          border-color: $clr-primary-500;
+          color: white;
+          rotate: 360deg;
+          transition: background-color 0.5s, rotate 1s ease;
+        }
+      }
+    }
+  }
+
+  .navMenu {
+    position: fixed;
+    opacity: 0;
+    top: 3rem;
+    height: 0;
+    width: 0;
+    background-color: $clr-primary-200;
+    z-index: -1;
+    color: $clr-primary-800;
+    display: grid;
+    grid-template-columns: unset;
+    place-content: center;
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .waysMade {
+      display: none;
+      justify-content: center;
+      align-self: center;
+
+      @include desktop {
+        display: grid;
       }
 
       p {
-        padding-block: 0.5rem;
+        display: grid;
+        .madeBy {
+          font-size: 30px;
+        }
+        .ways {
+          font-size: 80px;
+        }
       }
+
+      div {
+        font-size: 30px;
+      }
+    }
+
+    .menuLinks {
+      display: grid;
+      gap: 1rem;
+      font-size: 50px;
+      justify-self: left;
     }
   }
 }

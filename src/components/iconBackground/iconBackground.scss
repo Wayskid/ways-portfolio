@@ -1,101 +1,75 @@
+.iconBackground {
+  $iconNum: 70;
+  $iconBaseSize: 40;
 
-.iconBackground{
-   position: relative;
-   width: 100%;
-   justify-self: center;
-   height: 100vh;
-}
+  position: relative;
+  overflow: hidden;
+  opacity: 0.5;
 
-.iconBackground>*{
-   font-size: 25px;
-   font-weight: 900;
-   color: white;
-   opacity: 0.1;
-   position: absolute;
-}
+  .icon {
+    transform: translateY(-100px);
+    animation: fade-frames 200ms infinite, scale-frames 2s infinite;
+    translate: 0 -10rem;
 
-.iconBackground>:nth-child(2){
-   top: 11%;
-   right: 5%;
-}
+    @keyframes fade-frames {
+      0% {
+        opacity: 1;
+      }
 
-.iconBackground>:nth-child(7){
-   top: 40%;
-   right: 11%;
-}
+      50% {
+        opacity: 0.7;
+      }
 
-.iconBackground>:nth-child(8){
-   top: 31%;
-   right: 29%;
-}
+      100% {
+        opacity: 1;
+      }
+    }
 
-.iconBackground>:nth-child(9){
-   top: 60%;
-   right: 30%;
-}
+    @keyframes scale-frames {
+      0% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
 
-.iconBackground>:nth-child(3){
-   top: 90%;
-   right: 45%;
-}
+      50% {
+        transform: scale3d(2.2, 2.2, 1);
+      }
 
-.iconBackground>:nth-child(10){
-   top: 60%;
-   right: 46%;
-}
+      100% {
+        transform: scale3d(0.4, 0.4, 1);
+      }
+    }
+  }
 
-.iconBackground>:nth-child(16){
-   top: 85%;
-   right: 21%;
-}
+  @for $i from 1 through $iconNum {
+    & > :nth-child(#{$i}) {
+      $iconSize: random($iconBaseSize);
+      font-size: $iconSize + px;
 
-.iconBackground>:nth-child(13){
-   top: 40%;
-   right: 40%;
-}
+      $startPositionY: random(10) + 100;
+      $framesName: "move-frames-" + $i;
+      $moveDuration: 28000 + random(9000) + ms;
 
-.iconBackground>:nth-child(1){
-   top: 11%;
-   left: 5%;
-}
+      animation-name: #{$framesName};
+      animation-duration: $moveDuration;
+      animation-delay: random(30000) + ms;
 
-.iconBackground>:nth-child(4){
-   top: 40%;
-   left: 11%;
-}
+      @keyframes #{$framesName} {
+        from {
+          transform: translate3d(random(100) + vw, $startPositionY + vh, 0);
+        }
 
-.iconBackground>:nth-child(6){
-   top: 31%;
-   left: 29%;
-}
+        to {
+          transform: translate3d(
+            random(100) + vw,
+            -$startPositionY - random(30) + vh,
+            0
+          );
+        }
+      }
 
-.iconBackground>:nth-child(11){
-   top: 60%;
-   left: 30%;
-}
-
-.iconBackground>:nth-child(5){
-   top: 90%;
-   left: 45%;
-}
-
-.iconBackground>:nth-child(12){
-   top: 60%;
-   left: 46%;
-}
-
-.iconBackground>:nth-child(14){
-   top: 85%;
-   left: 21%;
-}
-
-.iconBackground>:nth-child(15){
-   top: 40%;
-   left: 40%;
-}
-
-.iconBackground>*:hover{
-   color: var(--clr-primary-500--);
-   transition: 0.8s ease;
-   opacity: 0.7;
+      .icon {
+        animation-delay: random(4000) + ms;
+      }
+    }
+  }
 }

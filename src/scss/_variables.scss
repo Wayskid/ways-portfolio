@@ -11,7 +11,7 @@ $clr-neutral-900: #000000;
 
 /* MEDIA QUERY */
 $desktop: 800px;
-$tablet: 481px;
+$tablet: 681px;
 
 @mixin desktop {
   @media (min-width: $desktop) {
@@ -19,11 +19,11 @@ $tablet: 481px;
   }
 }
 
-// @mixin tablet{
-//     @media(min-width: $tablet){
-//         @content;
-//     }
-// }
+@mixin tablet{
+    @media(min-width: $tablet){
+        @content;
+    }
+}
 
 /* BUTTON */
 

@@ -1,98 +1,84 @@
 @import "./variables";
 
 #projects {
+  background-image: url(../assets/img/bkg2.jpg);
   display: grid;
-  color: $clr-primary-800;
-  padding-block: 3rem;
-  gap: 4rem;
-
-  .projectsHeader {
-    @include sectionHeader;
-  }
-
-  .projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    border-radius: 20px;
-    width: min(80rem, 95%);
-    justify-self: center;
-  }
 
   .projectCard {
+    min-height: 100vh;
     display: grid;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-    position: relative;
-
-    &:hover .projectCardSeeMore {
-      grid-template-rows: 1fr;
+    grid-template-rows: 15% 80%;
+    align-items: start;
+    padding-block: 4rem 1rem;
+    color: $clr-primary-200;
+    overflow: hidden;
+    scroll-snap-align: center;
+    background-image: url(../assets/img/bkg5.jpg);
+    background-position-x: 2050px;
+    background-position-y: -130px;
+    @include desktop {
+      grid-template-rows: 10% 90%;
+      background-position: center;
     }
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    &Bottom {
-      bottom: 100%;
-      width: 100%;
+    .projectCardBody {
       display: grid;
-      padding: 0.5rem;
+      padding-inline: 0.5rem;
+      width: min(75rem, 100%);
+      justify-self: center;
+      @include desktop {
+        grid-template-columns: 1fr 1.5fr;
+        align-self: center;
+        gap: 2rem;
+      }
+
+      .imgSlideIn {
+        justify-self: center;
+        @include desktop {
+          order: 1;
+        }
+        .imgWrap {
+          display: grid;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
 
       .projectCardText {
         display: grid;
-        gap: 0.5rem;
+        gap: 0.3rem;
+        align-self: center;
+
+        .projectName {
+          font-size: 30px;
+          color: $clr-primary-500;
+          font-weight: 500;
+        }
 
         .projectTitle {
           font-size: 20px;
           font-weight: 500;
-          color: $clr-primary-400;
-        }
-
-        .projectName {
-          font-size: 21px;
-          font-weight: 500;
-        }
-      }
-
-      .projectCardSeeMore {
-        display: grid;
-        background-color: white;
-
-        @include desktop {
-          position: absolute;
-          top: 100%;
-          width: 100%;
-          left: 0;
-          z-index: 4;
-          grid-template-rows: 0fr;
-          transition: grid-template-rows 1s ease;
-        }
-
-        .seeMoreWrap {
-          display: grid;
-          gap: 0.5rem;
-          overflow: hidden;
-
-          @include desktop {
-            padding-inline: 0.5rem;
-          }
+          color: gray;
         }
 
         .projectDes {
-          font-size: 15px;
+          font-size: 18px;
+          line-height: 1.4em;
         }
 
         .builtWith {
           font-weight: 500;
-          font-size: 17px;
+          line-height: 1.7em;
+          span {
+            font-size: 18px;
+            color: $clr-primary-500;
+            font-size: 20px;
+          }
         }
 
         .projectBtns {
-          padding-bottom: 0.5rem;
           display: flex;
           gap: 2rem;
 
@@ -101,15 +87,15 @@
             background: none;
           }
 
-          .projectSiteBtn {
+          .projectGithubBtn {
             border: none;
             background: none;
-            font-size: 18px;
+            font-size: 17px;
             display: flex;
             gap: 0.3rem;
             align-items: center;
             justify-content: left;
-            color: $clr-primary-400;
+            color: white;
             cursor: pointer;
 
             &:hover {
@@ -117,26 +103,68 @@
             }
 
             &:hover > :last-child {
-              translate: 5px 0;
-              transition: 0.5s ease;
+              translate: 5px -2px;
+              transition: translate 0.5s ease;
             }
           }
 
-          .projectGithubBtn {
-            @extend .projectSiteBtn;
-            color: $clr-primary-600;
+          .projectSiteBtn {
+            color: $clr-primary-400;
+            @extend .projectGithubBtn;
           }
         }
-
-        // .projectGithubBtn {
-        //   @extend .projectSiteBtn;
-        //   color: $clr-primary-400;
-        // }
       }
-    }
-
-    &:hover .projectCardBtns {
-      translate: 0;
     }
   }
 }
+// }
+
+// .projectCardWrap {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: relative;
+//   scroll-snap-align: center;
+//   perspective: 500px;
+
+//   .proCardDiv {
+//     width: 100%;
+//     height: 100vh;
+//     min-height: 90vh;
+//     position: relative;
+//     margin: 20px;
+//     background-color: blue;
+//     overflow: hidden;
+//   }
+
+//   .projectCard {
+//     display: none;
+//     position: absolute;
+//     margin: 0;
+//     background: var(--white);
+//     // overflow: hidden;
+//     color: $clr-primary-200;
+//     // display: grid;
+//     grid-template-columns: 35% 65%;
+
+//     a {
+//       display: grid;
+//       img {
+//         // rotate: 0;
+//         width: 100%;
+//         height: auto;
+//         // justify-self: right;
+//         @include desktop {
+//           // rotate: 5deg;
+//           // width: 80%;
+//         }
+//       }
+
+//       @include desktop {
+//         order: 1;
+//       }
+//     }
+
+//     }
+//   }
+// }

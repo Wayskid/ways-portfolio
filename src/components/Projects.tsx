@@ -1,23 +1,28 @@
 import "../scss/projects.scss";
 import { projects } from "../assets/projectsData";
 import ProjectCard from "./ProjectCard";
-import Reveal from "./Reveal";
+import { useInView } from "framer-motion";
+import { useRef, useContext, useEffect } from "react";
+import AppContext from "../context/AppContext";
+import { ReducerActionTypes } from "../types/ReducerActionTypes";
+import SecHeader from "./SecHeader";
+import Reveal from "./Reveal Animations/Reveal";
 
 export default function Projects() {
+  const divRef = useRef(null);
+  const isInView = useInView(divRef, { once: false, amount: "some" });
+  const { dispatch } = useContext(AppContext);
+
+  useEffect(() => {
+    if (isInView) {
+      dispatch({ type: ReducerActionTypes.ACTIVE_NAV, payload: "projects" });
+    }
+  }, [isInView]);
   return (
-    <div id="projects">
-      <Reveal divId="Portfolio">
-        <div className="projectsHeader">
-          <p>Here's my recent</p>
-          <p>Projects</p>
-        </div>
-      </Reveal>
-      <ul className="projectsGrid">
-        {projects.map((project) => {
-          return <ProjectCard key={project.id} project={project} />;
-        })}
-      </ul>
-      <Reveal divId="Portfolio"></Reveal>
-    </div>
+    <ul id="projects">
+      {projects.map((project) => {
+        return <ProjectCard key={project.id} project={project} />;
+      })}
+    </ul>
   );
 }

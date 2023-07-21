@@ -1,0 +1,66 @@
+@import "./variables";
+
+#summary {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 15% 80%;
+  align-items: start;
+  padding-block: 4rem 1rem;
+  color: black;
+  overflow-x: hidden;
+  scroll-snap-align: center;
+  background-image: url(../assets/img/bkg3.jpg);
+
+  .summaryGrid {
+    display: grid;
+    justify-items: center;
+    width: min(75rem, 100%);
+    justify-self: center;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 2rem;
+    align-self: center;
+
+    div {
+      display: grid;
+      justify-items: center;
+      gap: 0.5rem;
+
+      & > :first-child {
+        font-size: clamp(30px, 5vw + 10px, 50px);
+        color: $clr-primary-500;
+      }
+
+      .summaryTitle {
+        font-size: clamp(20px, 2vw + 2px, 25px);
+        font-weight: 500;
+        color: rgb(95, 94, 94);
+      }
+
+      p {
+        font-weight: 500;
+        font-size: clamp(25px, 5vw + 5px, 45px);
+      }
+    }
+  }
+
+  .mobileFirst {
+    position: absolute;
+    color: $clr-primary-500;
+    animation: bounce 1s infinite;
+    bottom:3rem;
+    justify-self: center;
+
+    @keyframes bounce {
+      from {
+        translate: 0;
+      }
+      60% {
+        translate: 0 10px;
+      }
+      to {
+        translate: 0;
+      }
+    }
+  }
+}

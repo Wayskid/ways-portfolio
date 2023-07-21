@@ -1,76 +1,158 @@
 @import "./variables";
 
 #contact {
-  background-color: $clr-primary-700;
-  clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
-  position: relative;
-  padding-block: 6rem 4rem;
+  min-height: 100vh;
   display: grid;
-  gap: 4rem;
+  align-items: start;
+  padding-block: 4rem 2rem;
+  color: black;
+  overflow-x: hidden;
+  scroll-snap-align: center;
+  background-image: url(../assets/img/bkg5.jpg);
+  background-position: center;
 
-  .contactHeader {
-    @include sectionHeader;
-
-    &::after {
-      background-color: white;
-    }
+  @include desktop {
+    grid-template-rows: 15% 80%;
   }
 
-  .contactIntro {
-    text-align: center;
-    color: $clr-primary-500;
-  }
-
-  form {
+  .contactBody {
     display: grid;
-    gap: 0.7rem;
-    width: min(30rem, 90%);
+    width: min(75rem, 100%);
+    padding-inline: 1rem;
+    gap: 2rem;
     justify-self: center;
 
-    .contactBtn {
-      @include noBackgroundBtn;
+    @include desktop {
+      align-self: center;
     }
 
-    input,
-    textarea {
-      padding: 0.5rem;
-      width: 100%;
-      resize: none;
-      font-size: 17px;
-      background-color: $clr-primary-300;
-      border: none;
-      outline: none;
-      color: $clr-primary-800;
-      border: 1px solid transparent;
-      border-radius: 4px;
+    .contactForm {
+      display: grid;
+      gap: 2rem;
 
-      &::placeholder {
-        color: $clr-primary-800;
-        opacity: 0.7;
+      @include desktop {
+        display: flex;
+        justify-content: center;
       }
 
-      &:focus {
-        border: 1px solid $clr-primary-500;
+      .contacts {
+        display: grid;
+        gap: 1rem;
+        justify-self: center;
+        width: min(30rem, 100%);
+        @include desktop {
+          align-self: start;
+          gap: 2rem;
+        }
+
+        .contactIntro {
+          text-align: center;
+          color: $clr-primary-500;
+
+          @include desktop {
+            text-align: left;
+          }
+        }
+
+        .contactFlex {
+          display: flex;
+          gap: 1rem;
+
+          & > :first-child {
+            background-color: $clr-primary-500;
+            display: grid;
+            place-content: center;
+            padding: 1rem 1.2rem;
+            color: $clr-primary-200;
+            border-radius: 2px;
+            font-size: 25px;
+          }
+
+          .contactGrid {
+            display: grid;
+
+            &Title {
+              font-size: 20px;
+              color: $clr-primary-200;
+            }
+
+            &Value {
+              font-size: 14px;
+              color: rgb(217, 215, 215);
+            }
+          }
+        }
       }
 
-      &:focus::placeholder {
-        color: transparent;
+      form {
+        display: grid;
+        gap: 0.7rem;
+        width: min(30rem, 100%);
+        justify-self: center;
+        border-radius: 10px;
+
+        input,
+        textarea {
+          padding: 0.5rem;
+          width: 100%;
+          resize: none;
+          font-size: 17px;
+          background-color: transparent;
+          border: 1px solid $clr-primary-500;
+          outline: none;
+          color: $clr-primary-200;
+          border-radius: 3px;
+
+          &::placeholder {
+            color: $clr-primary-200;
+            opacity: 0.6;
+          }
+
+          &:focus {
+            border: 1px solid $clr-primary-500;
+          }
+
+          &:focus::placeholder {
+            color: transparent;
+          }
+        }
+
+        .btnFlex {
+          display: flex;
+          // justify-content: space-between;
+
+          .emailSent {
+            color: $clr-primary-200;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 20px;
+          }
+
+          .contactBtn {
+            color: $clr-primary-200;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid $clr-primary-500;
+            padding: 0.4rem 1.1rem;
+            font-size: 15px;
+            margin-left: auto;
+
+            &:hover:not(:disabled) {
+              background-color: $clr-primary-500;
+              color: $clr-primary-200;
+              transition: all 0.4s ease;
+              border-color: transparent;
+            }
+
+            &:disabled {
+              opacity: 0.4;
+              cursor: default;
+            }
+          }
+        }
       }
     }
-
-    .contactBtn {
-      @include backgroundBtn;
-      padding: 0.5rem 2rem;
-      justify-self: right;
-    }
-  }
-
-  .emailSent {
-    color: $clr-primary-500;
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-    position: absolute;
-    bottom: 0.5rem;
   }
 }

@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+.noBkgBtn {
+  color: $clr-primary-200;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid $clr-primary-500;
+  padding: 0.4rem 1.1rem;
+  font-size: 15px;
+
+  &:hover {
+    background-color: $clr-primary-500;
+    color: $clr-primary-200;
+    transition: all 0.4s ease;
+    border-color: transparent;
+  }
+}

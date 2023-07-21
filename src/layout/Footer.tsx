@@ -3,11 +3,13 @@ import { FiGithub } from "react-icons/fi";
 import { GrLinkedinOption } from "react-icons/gr";
 import { FiTwitter } from "react-icons/fi";
 import WaysLogo from "../assets/img/logo.png";
+import Contact from "../components/Contact";
 
 export default function Footer() {
   return (
     <footer>
       <img src={WaysLogo} alt="logo" />
+      <p>Ever since I typed my first line of code, I knew the next one would be the best one</p>
       <div className="socials">
         <a
           href="https://github.com/Wayskid"
@@ -31,7 +33,7 @@ export default function Footer() {
           <FiTwitter />
         </a>
       </div>
-      <div className="copyRight">
+      <div className="copyright">
         IRINYEMI RICHARD <span>&copy;2022</span>
       </div>
     </footer>

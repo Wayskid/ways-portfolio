@@ -1,13 +1,36 @@
 import Home from "./pages/Home";
 import Nav from "./layout/Nav";
 import Footer from "./layout/Footer";
+import { useEffect, useState } from "react";
+import logoVideo from "./assets/img/waysLogoAnim.mp4";
 
 function App() {
+  const [showLogo, setShowLogo] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowLogo(false);
+    }, 3000);
+  }, []);
   return (
     <div className="App">
-      <Nav />
-      <Home/>
-      <Footer />
+      {showLogo ? (
+        <video
+          width="200px"
+          height="auto"
+          className="logoVideo"
+          src={logoVideo}
+          autoPlay
+          loop
+          muted
+        ></video>
+      ) : (
+        <>
+          <Nav />
+          <Home />
+          <Footer />
+        </>
+      )}
     </div>
   );
 }

@@ -1,52 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,400;1,500&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,400;1,500&family=Saira:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap");
 
 @import "./variables";
 
-*{
-   margin: 0;
-   padding: 0;
-   list-style: none;
-   text-decoration: none;
-   font-family: inherit;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
 }
 
-*,*::before,*::after{
-   box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html{
-   scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  @include desktop {
+    scroll-snap-type: y mandatory;
+  }
 }
 
-:focus::placeholder{
-   color: transparent;
+:focus::placeholder {
+  color: transparent;
 }
 
-::-webkit-scrollbar{
-   width: 0.3em;
+::-webkit-scrollbar {
+  width: 0.3em;
 }
 
-::-webkit-scrollbar-track{
-   background-color: $clr-primary-800;
+::-webkit-scrollbar-track {
+  background-color: $clr-primary-800;
 }
 
-::-webkit-scrollbar-thumb{
-   background-color: $clr-primary-200;
+::-webkit-scrollbar-thumb {
+  background-color: $clr-primary-200;
 }
 
-@supports (scrollbar-color: red blue){
-   *{
-      scrollbar-color: $clr-primary-200 $clr-primary-800;
-      scrollbar-width: auto;
-   }
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: $clr-primary-200 $clr-primary-800;
+    scrollbar-width: auto;
+  }
 }
 
-body{
-   font-family: 'Saira', sans-serif;
-   color: $clr-primary-200;
-   background-color: $clr-primary-200;
+#root {
+  height: 100%;
 }
 
-.App{
-   display: grid;
+body {
+  height: 100%;
+  font-family: "Saira", sans-serif;
+  color: $clr-primary-200;
+}
+
+.App {
+  height: 100%;
+  display: grid;
+}
+
+.logoVideo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
 }
