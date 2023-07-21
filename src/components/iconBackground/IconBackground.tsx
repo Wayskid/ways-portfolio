@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./iconBackground.scss";
 import { AiOutlineApi } from "react-icons/ai";
 import { DiMongodb, DiSass } from "react-icons/di";
@@ -7,7 +6,6 @@ import { DiHtml53DEffects } from "react-icons/di";
 import { DiNodejsSmall } from "react-icons/di";
 import { DiReact } from "react-icons/di";
 import {
-  SiAxios,
   SiCss3,
   SiExpress,
   SiPostgresql,

@@ -3,7 +3,6 @@ import { FiGithub } from "react-icons/fi";
 import { GrLinkedinOption } from "react-icons/gr";
 import { FiTwitter } from "react-icons/fi";
 import WaysLogo from "../assets/img/logo.png";
-import Contact from "../components/Contact";
 
 export default function Footer() {
   return (

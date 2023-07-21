@@ -5,8 +5,6 @@ import { useInView } from "framer-motion";
 import { useRef, useContext, useEffect } from "react";
 import AppContext from "../context/AppContext";
 import { ReducerActionTypes } from "../types/ReducerActionTypes";
-import SecHeader from "./SecHeader";
-import Reveal from "./Reveal Animations/Reveal";
 
 export default function Projects() {
   const divRef = useRef(null);
