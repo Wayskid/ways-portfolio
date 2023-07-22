@@ -1,11 +1,15 @@
 @import "./variables";
 
 .nav {
-  position: fixed;
-  top: 1rem;
+  // position: fixed;
+  position: absolute;
+  top: 0;
   width: 100%;
   display: grid;
   z-index: 5;
+  background-color: transparent;
+  padding-block: 0.2rem;
+  transition: all 1s ease;
 
   &Wrap {
     display: flex;
@@ -16,7 +20,7 @@
     width: min(75rem, 100%);
 
     img {
-      width: 3rem;
+      width: 2rem;
       margin-left: 0.5rem;
     }
 

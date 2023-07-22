@@ -200,10 +200,10 @@
       border-radius: 40px;
       border: 2px solid $clr-primary-500;
       position: absolute;
-      justify-self: center;
       bottom: 2rem;
       display: grid;
       justify-items: center;
+      left: 50%;
 
       &:before {
         content: "";

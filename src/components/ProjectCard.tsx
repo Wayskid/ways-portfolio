@@ -2,17 +2,8 @@ import { FiExternalLink } from "react-icons/fi";
 import { ProjectTypes } from "../types/InitialStateTypes";
 import SecHeader from "./SecHeader";
 import Reveal, { SlideIn } from "./Reveal Animations/Reveal";
-import { useEffect, useState } from "react";
 
 export default function ProjectCard({ project }: { project: ProjectTypes }) {
-  const [loop, setLoop] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoop(!loop);
-    }, 10000);
-  });
-
   return (
     <div className="projectCard">
       <SecHeader secTitle={`Project 0${project.id}`} />

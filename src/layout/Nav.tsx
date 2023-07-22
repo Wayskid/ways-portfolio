@@ -1,13 +1,33 @@
 import { Variants, motion } from "framer-motion";
 import "../scss/nav.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import logo from "../assets/img/waysLogo.png";
 import { BiX } from "react-icons/bi";
 import { FiGithub, FiMenu } from "react-icons/fi";
 import { GrLinkedin } from "react-icons/gr";
+import AppContext from "../context/AppContext";
 
 export default function Navigation() {
+  const { introInView } = useContext(AppContext);
+
   const [showNavMenu, setShowNavMenu] = useState(false);
+
+  const showNavVariants: Variants = {
+    showNav: {
+      backgroundColor: "#02010ecc",
+      top: -100,
+      transition: {
+        type: "easeIn",
+      },
+      transitionEnd: {
+        position: "fixed",
+        top: 0,
+      },
+    },
+    hideNav: {
+      position: "absolute",
+    },
+  };
 
   const navMenuVariant: Variants = {
     showNavMenu: {
@@ -40,7 +60,7 @@ export default function Navigation() {
       opacity: 1,
       transition: {
         transitionDelay: 1.5,
-        type: "spring",
+        type: "ease",
       },
     },
     hideNavLinks: {
@@ -50,19 +70,13 @@ export default function Navigation() {
   };
 
   return (
-    <div className="nav">
+    <motion.div
+      variants={showNavVariants}
+      animate={introInView ? "hideNav" : "showNav"}
+      className="nav"
+    >
       <div className="navWrap">
-        <motion.img
-          initial={{ scale: 2, translateX: "100%", translateY: "100%" }}
-          animate={{
-            scale: 1,
-            translateX: 0,
-            translateY: 0,
-            transition: { duration: 0.5 },
-          }}
-          src={logo}
-          alt="Ways"
-        />
+        <img src={logo} alt="Ways" />
         <div className="burger">
           {showNavMenu ? (
             <div
@@ -113,6 +127,6 @@ export default function Navigation() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

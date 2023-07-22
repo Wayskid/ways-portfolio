@@ -1,11 +1,5 @@
 export interface InitialStateTypes {
-  activeNav: String;
-  contactForm: {
-    name: string;
-    email: string;
-    message: string;
-  };
-  emailSent: boolean;
+  showNav: Boolean;
 }
 
 export interface ProjectTypes {

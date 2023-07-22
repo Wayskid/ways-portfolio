@@ -1,10 +1,4 @@
-import {
-  ReactElement,
-  createContext,
-  useReducer,
-} from "react";
-import { AppReducer } from "../reducers/AppReducer";
-import { InitialState } from "../reducers/InitialState";
+import { ReactElement, createContext, useState } from "react";
 import { ContextTypes } from "../types/ContextTypes";
 
 const AppContext = createContext<ContextTypes>({} as ContextTypes);
@@ -14,11 +8,12 @@ export function AppProvider({
 }: {
   children: ReactElement | undefined;
 }): React.JSX.Element {
+  const [introInView, setIntroInView] = useState(false);
 
-  const [state, dispatch] = useReducer(AppReducer, InitialState);
+  console.log(introInView);
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ introInView, setIntroInView }}>
       {children}
     </AppContext.Provider>
   );

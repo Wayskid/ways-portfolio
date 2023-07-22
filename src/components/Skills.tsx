@@ -1,26 +1,12 @@
 import "../scss/skills.scss";
-import { useInView } from "framer-motion";
-import { useRef, useContext, useEffect } from "react";
-import AppContext from "../context/AppContext";
-import { ReducerActionTypes } from "../types/ReducerActionTypes";
 import { SlideIn } from "./Reveal Animations/Reveal";
 import SecHeader from "./SecHeader";
 import { AiOutlineCode, AiOutlineCodepen } from "react-icons/ai";
 import { HiOutlineCode } from "react-icons/hi";
 
 export default function Skills() {
-  const divRef = useRef(null);
-  const isInView = useInView(divRef, { once: false, amount: "some" });
-  const { dispatch } = useContext(AppContext);
-
-  useEffect(() => {
-    if (isInView) {
-      dispatch({ type: ReducerActionTypes.ACTIVE_NAV, payload: "skills" });
-    }
-  }, [isInView]);
-
   return (
-    <div id="skills" ref={divRef}>
+    <div id="skills">
       <SecHeader secTitle="Expertise" />
       <div className="skillsGrid">
         <SlideIn className="skill">

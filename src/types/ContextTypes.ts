@@ -1,7 +1,6 @@
-import { InitialStateTypes } from "./InitialStateTypes";
-import { ActionTypes } from "./ReducerActionTypes";
+import { Dispatch, SetStateAction } from "react";
 
 export type ContextTypes = {
-  state: InitialStateTypes;
-  dispatch: React.Dispatch<ActionTypes>;
+  introInView: Boolean;
+  setIntroInView: Dispatch<SetStateAction<boolean>>;
 };

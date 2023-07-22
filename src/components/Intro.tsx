@@ -2,28 +2,30 @@ import "../scss/intro.scss";
 import myImg from "../assets/img/myImg.png";
 import resume from "../assets/resume.pdf";
 import IconBackground from "./iconBackground/IconBackground";
-import { useInView } from "framer-motion";
-import { useRef, useContext, useEffect } from "react";
-import AppContext from "../context/AppContext";
-import { ReducerActionTypes } from "../types/ReducerActionTypes";
 import { FiGithub } from "react-icons/fi";
 import { GrLinkedin } from "react-icons/gr";
 import AppBtn from "./appBtn/AppBtn";
 import Reveal, { SlideIn } from "./Reveal Animations/Reveal";
+import { useInView } from "framer-motion";
+import { useRef, useEffect, useContext } from "react";
+import AppContext from "../context/AppContext";
 
 export default function Intro() {
+  const { setIntroInView } = useContext(AppContext);
+
   const divRef = useRef(null);
-  const isInView = useInView(divRef, { once: false, amount: 0.4 });
-  const { dispatch } = useContext(AppContext);
+  const isInView = useInView(divRef, { amount: 0.2 });
 
   useEffect(() => {
     if (isInView) {
-      dispatch({ type: ReducerActionTypes.ACTIVE_NAV, payload: "intro" });
+      setIntroInView(true);
+    } else {
+      setIntroInView(false);
     }
   }, [isInView]);
 
   return (
-    <div id="intro">
+    <div id="intro" ref={divRef}>
       <>
         <IconBackground />
         <div className="introBody">
