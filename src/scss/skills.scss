@@ -11,6 +11,17 @@
   scroll-snap-align: center;
   background-image: url(../assets/img/bkg3.jpg);
 
+  
+    .secHead {
+      p {
+        color: black;
+
+        &::after{
+          background-color: black;
+        }
+      }
+    }
+
   .skillsGrid {
     display: grid;
     gap: 2rem;

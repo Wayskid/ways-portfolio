@@ -17,7 +17,7 @@ export default function Reveal({
       whileInView={{
         translateY: 0,
         opacity: 1,
-        transition: { type: "easeInOut" },
+        transition: { type: "easeInOut", delay: 0.3 },
       }}
       viewport={{ once: true }}
       className={className}
@@ -37,10 +37,11 @@ export function SlideIn({
 }) {
   return (
     <motion.div
-      initial={{ translateX: 200 }}
+      initial={{ translateX: 200, opacity: 0 }}
       whileInView={{
         translateX: 0,
-        transition: { type: "easeInOut" }
+        opacity: 1,
+        transition: { type: "easeInOut", delay: 0.3 },
       }}
       viewport={{ once: true }}
       className={className}

@@ -1,7 +1,6 @@
 @import "./variables";
 
 #projects {
-  background-image: url(../assets/img/bkg2.jpg);
   display: grid;
 
   .projectCard {
@@ -26,6 +25,8 @@
       padding-inline: 0.5rem;
       width: min(75rem, 100%);
       justify-self: center;
+      align-self: center;
+      gap: 1rem;
       @include desktop {
         grid-template-columns: 1fr 1.5fr;
         align-self: center;
@@ -48,7 +49,7 @@
 
       .projectCardText {
         display: grid;
-        gap: 0.3rem;
+        gap: 0.7rem;
         align-self: center;
 
         .projectName {
@@ -95,7 +96,7 @@
             gap: 0.3rem;
             align-items: center;
             justify-content: left;
-            color: white;
+            color: $clr-primary-200;
             cursor: pointer;
 
             &:hover {

@@ -11,6 +11,16 @@
   scroll-snap-align: center;
   background-image: url(../assets/img/bkg3.jpg);
 
+  .secHead {
+    p {
+      color: black;
+
+      &::after {
+        background-color: black;
+      }
+    }
+  }
+
   .summaryGrid {
     display: grid;
     justify-items: center;
@@ -48,7 +58,7 @@
     position: absolute;
     color: $clr-primary-500;
     animation: bounce 1s infinite;
-    bottom:3rem;
+    bottom: 3rem;
     justify-self: center;
 
     @keyframes bounce {

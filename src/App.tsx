@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       {showLogo ? (
         <video
-          width="200px"
+          width="250px"
           height="auto"
           className="logoVideo"
           src={logoVideo}

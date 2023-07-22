@@ -38,7 +38,8 @@
         place-content: center;
         border-radius: 50%;
         font-size: 32px;
-        color: white;
+        color: #cc2a21;
+        margin-right: 0.5rem;
 
         &:hover {
           background-color: rgba(255, 255, 255, 0.199);
@@ -56,11 +57,12 @@
         height: 50px;
         width: 50px;
         border: 3px solid $clr-primary-800;
+        margin-right: 0.5rem;
 
         &:hover {
           background-color: $clr-primary-500;
           border-color: $clr-primary-500;
-          color: white;
+          color: $clr-primary-200;
           rotate: 360deg;
           transition: background-color 0.5s, rotate 1s ease;
         }

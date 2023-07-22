@@ -28,7 +28,7 @@
     grid-template-columns: unset;
     width: min(75rem, 100%);
     margin-inline: auto;
-
+    
     @include tablet {
       grid-template-columns: 1fr 1fr;
     }
@@ -36,38 +36,38 @@
     .info {
       display: grid;
       text-align: left;
-      // gap: 1rem;
+      position: relative;
+      align-self: center;
+      gap: 1rem;
       @include desktop {
-        gap: 0;
       }
 
       .jobTitle {
-        font-size: clamp(1.8rem, 2vw + 0.75rem, 3rem);
+        font-size: clamp(35px, 5vw + 15px, 50px);
         font-weight: 600;
       }
 
       .myName {
-        font-size: clamp(2.2rem, 2vw + 0.75rem, 4rem);
+        font-size: clamp(25px, 5vw + 10px, 40px);
         font-weight: 600;
         color: $clr-primary-500;
       }
 
       .location {
         font-size: 18px;
-        margin-bottom: 1rem;
       }
 
       .writeUp {
-        font-size: clamp(0.8rem, 2vw + 0.35rem, 1.2rem);
-        margin-bottom: 1rem;
+        font-size: clamp(16px, 5vw + 1px, 23px);
       }
 
       .introBtns {
         position: absolute;
         align-self: self-end;
-        translate: 0 3.2rem;
+        translate: 0 4.4rem;
         display: flex;
         gap: 1rem;
+        bottom: 0;
         @include desktop {
           gap: 4rem;
         }
@@ -163,7 +163,7 @@
         align-self: center;
 
         a {
-          color: white;
+          color: $clr-primary-200;
 
           &:hover {
             color: $clr-primary-500;

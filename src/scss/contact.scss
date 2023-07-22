@@ -17,139 +17,131 @@
 
   .contactBody {
     display: grid;
+    gap: 3rem;
     width: min(75rem, 100%);
     padding-inline: 1rem;
-    gap: 2rem;
     justify-self: center;
+    align-self: center;
 
     @include desktop {
-      align-self: center;
+      display: flex;
+      justify-content: center;
     }
 
-    .contactForm {
+    .contacts {
       display: grid;
-      gap: 2rem;
-
+      gap: 1rem;
+      justify-self: center;
+      width: min(30rem, 100%);
       @include desktop {
-        display: flex;
-        justify-content: center;
+        align-self: start;
       }
 
-      .contacts {
-        display: grid;
-        gap: 1rem;
-        justify-self: center;
-        width: min(30rem, 100%);
+      .contactIntro {
+        text-align: center;
+        color: $clr-primary-500;
+        margin-bottom: 1rem;
+
         @include desktop {
-          align-self: start;
-          gap: 2rem;
-        }
-
-        .contactIntro {
-          text-align: center;
-          color: $clr-primary-500;
-
-          @include desktop {
-            text-align: left;
-          }
-        }
-
-        .contactFlex {
-          display: flex;
-          gap: 1rem;
-
-          & > :first-child {
-            background-color: $clr-primary-500;
-            display: grid;
-            place-content: center;
-            padding: 1rem 1.2rem;
-            color: $clr-primary-200;
-            border-radius: 2px;
-            font-size: 25px;
-          }
-
-          .contactGrid {
-            display: grid;
-
-            &Title {
-              font-size: 20px;
-              color: $clr-primary-200;
-            }
-
-            &Value {
-              font-size: 14px;
-              color: rgb(217, 215, 215);
-            }
-          }
+          text-align: left;
         }
       }
 
-      form {
-        display: grid;
-        gap: 0.7rem;
-        width: min(30rem, 100%);
-        justify-self: center;
-        border-radius: 10px;
+      .contactFlex {
+        display: flex;
+        gap: 1rem;
 
-        input,
-        textarea {
-          padding: 0.5rem;
-          width: 100%;
-          resize: none;
-          font-size: 17px;
-          background-color: transparent;
+        & > :first-child {
+          background-color: $clr-primary-500;
+          display: grid;
+          place-content: center;
+          padding: 1rem 1.2rem;
+          color: $clr-primary-200;
+          border-radius: 2px;
+          font-size: 25px;
+        }
+
+        .contactGrid {
+          display: grid;
+
+          &Title {
+            font-size: 20px;
+            color: $clr-primary-200;
+          }
+
+          &Value {
+            font-size: 14px;
+            color: rgb(217, 215, 215);
+          }
+        }
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 0.7rem;
+      width: min(30rem, 100%);
+      justify-self: center;
+      border-radius: 10px;
+
+      input,
+      textarea {
+        padding: 0.5rem;
+        width: 100%;
+        resize: none;
+        font-size: 17px;
+        background-color: transparent;
+        border: 1px solid $clr-primary-500;
+        outline: none;
+        color: $clr-primary-200;
+        border-radius: 3px;
+
+        &::placeholder {
+          color: $clr-primary-200;
+          opacity: 0.6;
+        }
+
+        &:focus {
           border: 1px solid $clr-primary-500;
-          outline: none;
+        }
+
+        &:focus::placeholder {
+          color: transparent;
+        }
+      }
+
+      .btnFlex {
+        display: flex;
+        // justify-content: space-between;
+
+        .emailSent {
+          color: $clr-primary-200;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 20px;
+        }
+
+        .contactBtn {
           color: $clr-primary-200;
           border-radius: 3px;
+          cursor: pointer;
+          background-color: transparent;
+          border: 1px solid $clr-primary-500;
+          padding: 0.4rem 1.1rem;
+          font-size: 15px;
+          margin-left: auto;
 
-          &::placeholder {
+          &:hover:not(:disabled) {
+            background-color: $clr-primary-500;
             color: $clr-primary-200;
-            opacity: 0.6;
+            transition: all 0.4s ease;
+            border-color: transparent;
           }
 
-          &:focus {
-            border: 1px solid $clr-primary-500;
-          }
-
-          &:focus::placeholder {
-            color: transparent;
-          }
-        }
-
-        .btnFlex {
-          display: flex;
-          // justify-content: space-between;
-
-          .emailSent {
-            color: $clr-primary-200;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 20px;
-          }
-
-          .contactBtn {
-            color: $clr-primary-200;
-            border-radius: 3px;
-            cursor: pointer;
-            background-color: transparent;
-            border: 1px solid $clr-primary-500;
-            padding: 0.4rem 1.1rem;
-            font-size: 15px;
-            margin-left: auto;
-
-            &:hover:not(:disabled) {
-              background-color: $clr-primary-500;
-              color: $clr-primary-200;
-              transition: all 0.4s ease;
-              border-color: transparent;
-            }
-
-            &:disabled {
-              opacity: 0.4;
-              cursor: default;
-            }
+          &:disabled {
+            opacity: 0.4;
+            cursor: default;
           }
         }
       }

@@ -6,6 +6,7 @@ import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import { GrMail } from "react-icons/gr";
 import { HiLocationMarker, HiPhone } from "react-icons/hi";
 import { motion } from "framer-motion";
+import Reveal from "./Reveal Animations/Reveal";
 
 export default function Contact() {
   //Send email
@@ -55,12 +56,12 @@ export default function Contact() {
     <div id="contact">
       <SecHeader secTitle="Get in touch!" />
       <div className="contactBody">
-        <div className="contactForm">
-          <div className="contacts">
-            <p className="contactIntro">
-              Have a question or want to work together ?
-            </p>
-            <div className="contactFlex">
+        <div className="contacts">
+          <p className="contactIntro">
+            Have a question or want to work together ?
+          </p>
+          <Reveal className="contactFlex">
+            <>
               <div>
                 <HiLocationMarker />
               </div>
@@ -68,8 +69,10 @@ export default function Contact() {
                 <p className="contactGridTitle">Location</p>
                 <p className="contactGridValue">HULL HU5 2NP, UK</p>
               </div>
-            </div>
-            <div className="contactFlex">
+            </>
+          </Reveal>
+          <Reveal className="contactFlex">
+            <>
               <div>
                 <HiPhone />
               </div>
@@ -77,8 +80,10 @@ export default function Contact() {
                 <p className="contactGridTitle">Phone</p>
                 <p className="contactGridValue">+2348085624058</p>
               </div>
-            </div>
-            <div className="contactFlex">
+            </>
+          </Reveal>
+          <Reveal className="contactFlex">
+            <>
               <div>
                 <GrMail />
               </div>
@@ -92,72 +97,72 @@ export default function Contact() {
                   wayskid02@gmail.com
                 </a>
               </div>
-            </div>
-          </div>
-          <form onSubmit={sendEmail}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              value={contactVal.name}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setContactVal({
-                  ...contactVal,
-                  name: e.target.value,
-                })
-              }
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              value={contactVal.email}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setContactVal({
-                  ...contactVal,
-                  email: e.target.value,
-                })
-              }
-            />
-            <textarea
-              name="message"
-              placeholder="Your message"
-              required
-              rows={7}
-              value={contactVal.message}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-                setContactVal({
-                  ...contactVal,
-                  message: e.target.value,
-                })
-              }
-            />
-            <div className="btnFlex">
-              {emailSentRes.status && !loading && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="emailSent"
-                >
-                  <AiFillCheckCircle /> Sent Successfully
-                </motion.p>
-              )}
-              <button
-                className="contactBtn"
-                disabled={
-                  contactVal.name.length < 1 ||
-                  contactVal.email.length < 1 ||
-                  contactVal.message.length < 1 ||
-                  loading
-                }
-              >
-                SEND
-              </button>
-            </div>
-          </form>
+            </>
+          </Reveal>
         </div>
+        <form onSubmit={sendEmail}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            required
+            value={contactVal.name}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setContactVal({
+                ...contactVal,
+                name: e.target.value,
+              })
+            }
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            value={contactVal.email}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setContactVal({
+                ...contactVal,
+                email: e.target.value,
+              })
+            }
+          />
+          <textarea
+            name="message"
+            placeholder="Your message"
+            required
+            rows={7}
+            value={contactVal.message}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              setContactVal({
+                ...contactVal,
+                message: e.target.value,
+              })
+            }
+          />
+          <div className="btnFlex">
+            {emailSentRes.status && !loading && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="emailSent"
+              >
+                <AiFillCheckCircle /> Sent Successfully
+              </motion.p>
+            )}
+            <button
+              className="contactBtn"
+              disabled={
+                contactVal.name.length < 1 ||
+                contactVal.email.length < 1 ||
+                contactVal.message.length < 1 ||
+                loading
+              }
+            >
+              SEND
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
