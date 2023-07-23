@@ -12,6 +12,7 @@ function App() {
       setShowLogo(false);
     }, 3000);
   }, []);
+
   return (
     <div className="App">
       {showLogo ? (
@@ -22,8 +23,8 @@ function App() {
           src={logoVideo}
           autoPlay
           loop
-          muted
-        ></video>
+          muted={true}
+        />
       ) : (
         <>
           <Nav />
