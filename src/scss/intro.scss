@@ -10,7 +10,7 @@
   height: 100vh;
   overflow-x: hidden;
   @include desktop {
-    background-position-x: 98%;
+    background-position-x: 88%;
     background-position-y: -95%;
   }
 
@@ -28,7 +28,7 @@
     grid-template-columns: unset;
     width: min(75rem, 100%);
     margin-inline: auto;
-    
+
     @include tablet {
       grid-template-columns: 1fr 1fr;
     }
@@ -37,7 +37,7 @@
       display: grid;
       text-align: left;
       position: relative;
-      align-self: center;
+      align-self: start;
       gap: 1rem;
       @include desktop {
       }
@@ -45,97 +45,24 @@
       .jobTitle {
         font-size: clamp(35px, 5vw + 15px, 50px);
         font-weight: 600;
-      }
+        line-height: 1.2em;
 
-      .myName {
-        font-size: clamp(25px, 5vw + 10px, 40px);
-        font-weight: 600;
-        color: $clr-primary-500;
-      }
-
-      .location {
-        font-size: 18px;
+        .myName {
+          font-weight: 600;
+          color: $clr-primary-500;
+        }
       }
 
       .writeUp {
         font-size: clamp(16px, 5vw + 1px, 23px);
+        font-style: italic;
       }
 
       .introBtns {
-        position: absolute;
-        align-self: self-end;
-        translate: 0 4.4rem;
         display: flex;
         gap: 1rem;
-        bottom: 0;
         @include desktop {
           gap: 4rem;
-        }
-
-        & > :first-child {
-          position: relative;
-
-          &:hover::before {
-            height: 21.5px;
-          }
-
-          &::before {
-            content: "";
-            width: 2px;
-            background-color: $clr-primary-500;
-            position: absolute;
-            top: -1.3rem;
-            left: 46.7px;
-            transform-origin: top;
-            transition: height 0.4s;
-            height: 0;
-            animation: connect 3s;
-            animation-delay: 2s;
-            display: none;
-
-            @include tablet {
-              display: unset;
-            }
-          }
-        }
-
-        & > :last-child {
-          position: relative;
-
-          &:hover::before {
-            height: 21.5px;
-          }
-
-          &::before {
-            content: "";
-            width: 2px;
-            background-color: $clr-primary-500;
-            position: absolute;
-            top: -1.3rem;
-            left: 46.7px;
-            transform-origin: top;
-            transition: height 0.5s;
-            height: 0;
-            animation: connect 3s;
-            animation-delay: 1.8s;
-            display: none;
-
-            @include tablet {
-              display: unset;
-            }
-          }
-
-          @keyframes connect {
-            from {
-              height: 0;
-            }
-            50% {
-              height: 20.5px;
-            }
-            to {
-              height: 0;
-            }
-          }
         }
       }
     }
@@ -144,12 +71,11 @@
       display: none;
       justify-items: center;
       position: relative;
-      align-self: baseline;
       @include tablet {
         display: grid;
       }
 
-      img {
+      & img {
         width: 20rem;
         mix-blend-mode: screen;
       }
@@ -158,37 +84,36 @@
         position: absolute;
         display: grid;
         gap: 2rem;
-        right: 0;
-        bottom: 2rem;
+        right: 2.4rem;
+        bottom: 2.4rem;
         align-self: center;
+        font-size: 25px;
+
+        &::before {
+          content: "";
+          width: 40rem;
+          height: 0.2rem;
+          background-color: $clr-primary-500;
+          position: absolute;
+          bottom: -1.2rem;
+          right: 0;
+        }
+        
+        &::after {
+          content: "";
+          height: 20rem;
+          width: 0.2rem;
+          background-color: $clr-primary-500;
+          position: absolute;
+          bottom: 0;
+          right: -1.2rem;
+        }
 
         a {
           color: $clr-primary-200;
 
           &:hover {
             color: $clr-primary-500;
-          }
-        }
-      }
-
-      &::before {
-        content: "";
-        width: 750rem;
-        height: 2px;
-        background-color: $clr-primary-500;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        justify-self: center;
-        transform-origin: center;
-
-        animation: extending 15s;
-        @keyframes extending {
-          from {
-            width: 10rem;
-          }
-          to {
-            width: 400rem;
           }
         }
       }

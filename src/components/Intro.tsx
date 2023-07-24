@@ -31,11 +31,11 @@ export default function Intro() {
         <div className="introBody">
           <Reveal className="info">
             <>
-              <p className="jobTitle">Frontend Developer</p>
-              <div>
-                <p className="myName">RICHARD IRINYEMI</p>
-                <p className="location">currently in Hull, UK</p>
-              </div>
+              <p className="jobTitle">
+                Hi, I'm <span className="myName">Richard</span> <br /> Front End
+                Developer
+                <p className="location">Hull, UK</p>
+              </p>
               <p className="writeUp">
                 I craft artistic, eye-catching and scalable frontend products,
                 while writing clean codes.
