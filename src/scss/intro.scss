@@ -23,13 +23,14 @@
     display: grid;
     gap: 0.7rem;
     justify-content: center;
-    align-content: center;
+    justify-self: center;
+    align-items: center;
     font-size: 1.3rem;
     grid-template-columns: unset;
     width: min(75rem, 100%);
-    margin-inline: auto;
+    margin-bottom: 1rem;
 
-    @include tablet {
+    @include desktop {
       grid-template-columns: 1fr 1fr;
     }
 
@@ -37,13 +38,12 @@
       display: grid;
       text-align: left;
       position: relative;
-      align-self: start;
       gap: 1rem;
       @include desktop {
       }
 
       .jobTitle {
-        font-size: clamp(35px, 5vw + 15px, 50px);
+        font-size: clamp(35px, 5vw + 17px, 50px);
         font-weight: 600;
         line-height: 1.2em;
 
@@ -54,7 +54,7 @@
       }
 
       .writeUp {
-        font-size: clamp(16px, 5vw + 1px, 23px);
+        font-size: clamp(16px, 5vw + 5px, 23px);
         font-style: italic;
       }
 
@@ -69,45 +69,33 @@
 
     .myImg {
       display: none;
-      justify-items: center;
       position: relative;
-      @include tablet {
+      @include desktop {
         display: grid;
+        grid-template-columns: 85% 15%;
+        justify-content: center;
       }
 
-      & img {
+      .meImg {
         width: 20rem;
-        mix-blend-mode: screen;
+        display: grid;
+        position: relative;
+        margin-left: auto;
+        
+        img {
+          width: 100%;
+          mix-blend-mode: screen;
+          position: relative;
+          border-bottom: 4px solid $clr-primary-500;
+        }
       }
 
       .socialIcons {
-        position: absolute;
         display: grid;
         gap: 2rem;
-        right: 2.4rem;
-        bottom: 2.4rem;
         align-self: center;
         font-size: 25px;
-
-        &::before {
-          content: "";
-          width: 40rem;
-          height: 0.2rem;
-          background-color: $clr-primary-500;
-          position: absolute;
-          bottom: -1.2rem;
-          right: 0;
-        }
-        
-        &::after {
-          content: "";
-          height: 20rem;
-          width: 0.2rem;
-          background-color: $clr-primary-500;
-          position: absolute;
-          bottom: 0;
-          right: -1.2rem;
-        }
+        margin-left: auto;
 
         a {
           color: $clr-primary-200;
@@ -120,8 +108,8 @@
     }
 
     .scrollDown {
-      width: 25px;
-      height: 40px;
+      width: 23px;
+      height: 35px;
       border-radius: 40px;
       border: 2px solid $clr-primary-500;
       position: absolute;
@@ -132,8 +120,8 @@
 
       &:before {
         content: "";
-        width: 5px;
-        height: 5px;
+        width: 3.5px;
+        height: 3.5px;
         border-radius: 50%;
         background-color: $clr-primary-500;
         position: absolute;
@@ -146,7 +134,7 @@
 
       @keyframes scroll {
         10% {
-          scale: 1.3;
+          scale: 1.2;
         }
         40% {
           scale: 1;
@@ -154,7 +142,7 @@
         }
         70% {
           scale: 1;
-          translate: 0 30px;
+          translate: 0 20px;
         }
         to {
           translate: 0;
@@ -162,12 +150,12 @@
       }
 
       @keyframes extend {
-        20% {
-          height: 10px;
-          border-radius: 20%;
+        50% {
+          height: 7px;
+          border-radius: 40%;
         }
         to {
-          height: 5px;
+          height: 3.5px;
         }
       }
     }

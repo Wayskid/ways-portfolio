@@ -10,8 +10,6 @@ export function AppProvider({
 }): React.JSX.Element {
   const [introInView, setIntroInView] = useState(false);
 
-  console.log(introInView);
-
   return (
     <AppContext.Provider value={{ introInView, setIntroInView }}>
       {children}

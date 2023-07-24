@@ -10,7 +10,7 @@
   scroll-snap-align: center;
   background-image: url(../assets/img/bkg5.jpg);
   background-position: center;
-
+  
   @include desktop {
     grid-template-rows: 15% 80%;
   }
@@ -22,10 +22,12 @@
     padding-inline: 1rem;
     justify-self: center;
     align-self: center;
-
+    margin-top: 2rem;
+    
     @include desktop {
       display: flex;
       justify-content: center;
+      margin-block: 0 1rem;
     }
 
     .contacts {

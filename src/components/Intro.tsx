@@ -31,11 +31,11 @@ export default function Intro() {
         <div className="introBody">
           <Reveal className="info">
             <>
-              <p className="jobTitle">
+              <div className="jobTitle">
                 Hi, I'm <span className="myName">Richard</span> <br /> Front End
                 Developer
                 <p className="location">Hull, UK</p>
-              </p>
+              </div>
               <p className="writeUp">
                 I craft artistic, eye-catching and scalable frontend products,
                 while writing clean codes.
@@ -61,7 +61,9 @@ export default function Intro() {
           </Reveal>
           <SlideIn className="myImg">
             <>
-              <img src={myImg} alt="me" />
+              <div className="meImg">
+                <img src={myImg} alt="me" />
+              </div>
               <div className="socialIcons">
                 <a href="https://github.com/Wayskid" target="_blank">
                   <FiGithub className="github" />
