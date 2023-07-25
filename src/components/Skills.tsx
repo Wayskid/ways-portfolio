@@ -58,8 +58,7 @@ export default function Skills() {
             <ul className="skillGrid">
               <div>
                 <li>Web Design</li>
-                <li>Figma</li>
-                <li>Canva</li>
+                <li>UI</li>
               </div>
             </ul>
           </>

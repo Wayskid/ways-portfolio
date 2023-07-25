@@ -10,7 +10,7 @@ export const projects = [
     viewCode: "https://github.com/Wayskid/socioView",
     visitApp: "https://socioview.netlify.app/",
     builtWith:
-      "TypeScript, ReactJS, Redux toolkit, Redux Query, SASS, NodeJS, Express, MongoDB, Express",
+      "TypeScript, ReactJS, Redux toolkit, Redux Query, SASS, NodeJS, Express, MongoDB",
   },
   {
     id: 2,
