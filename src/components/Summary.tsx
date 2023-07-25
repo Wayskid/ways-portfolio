@@ -14,7 +14,7 @@ export default function Summary() {
           <>
             <FiClock />
             <p className="summaryTitle">Work Hours</p>
-            <p className="summaryValue">3685</p>
+            <p className="summaryValue">5685</p>
           </>
         </Reveal>
         <Reveal>
@@ -28,14 +28,14 @@ export default function Summary() {
           <>
             <BiCertification />
             <p className="summaryTitle">Certifications</p>
-            <p className="summaryValue">5</p>
+            <p className="summaryValue">3</p>
           </>
         </Reveal>
         <Reveal>
           <>
             <BiTrophy />
             <p className="summaryTitle">Awards</p>
-            <p className="summaryValue">2</p>
+            <p className="summaryValue">1</p>
           </>
         </Reveal>
       </div>
